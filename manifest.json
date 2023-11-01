@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Sydle Gold 2.0",
+  "version": "2.4",
+  "description": "Atualiza o nome da guia atual do Sydle quando é clicada de acordo com o ambiente e classe acessada.",
+  "permissions": ["activeTab", "tabs", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon128.png",
+      "48": "images/icon128.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon128.png",
+    "48": "images/icon128.png",
+    "128": "images/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://cbmsa-dev.sydle.one/*",
+        "https://cbmsa-hom.sydle.one/*",
+        "https://cbmsa.sydle.one/*"
+      ],
+      "js": ["script.js"]
+    }
+  ]
+}
